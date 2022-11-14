@@ -6,9 +6,9 @@ void main(List<String> args) {
   double media = 0;
   for (int i = 100; i < 201; i++) {
     if (Testar.ePrimo(i) == true) {
-      total++;
-      count = count + i;
-      media = count / total;
+      total++; //total de primos
+      count = count + i; //soma dos selecionados
+      media = count / total; //media do conjunto
       //print(i);
       //print(total);
     }

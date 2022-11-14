@@ -1,28 +1,28 @@
-// KindaCode.com
-import 'dart:math';
 
-void main() {
-//   int min = 90;
-//   int max = 150;
+// import 'dart:math';
 
-//   int randomnum = min + Random().nextInt((max + 1) - min);
+// void main() {
+// //   int min = 90;
+// //   int max = 150;
 
-//   print(randomnum);
+// //   int randomnum = min + Random().nextInt((max + 1) - min);
 
-  int mini = 90;
-  int maxi = 150;
-  int tamanhoLista = mini + Random().nextInt((maxi + 1) - mini);
-  int amplitude = tamanhoLista - 89;
+// //   print(randomnum);
 
-  List<int> list = [
-    for (int i = 0; i <= tamanhoLista; i++) Random().nextInt(9999)
-  ];
+//   int mini = 90;
+//   int maxi = 150;
+//   int tamanhoLista = mini + Random().nextInt((maxi + 1) - mini);
+//   int amplitude = tamanhoLista - 89;
 
-  print(list);
-  print(tamanhoLista);
-//   print(amplitude);
-//   print(list.reduce(max));
-//   print('Maior valor encontrado: ${list.reduce(max)}');
-//   list.sort();
-//   print(list.reversed);
-}
+//   List<int> list = [
+//     for (int i = 0; i <= tamanhoLista; i++) Random().nextInt(9999)
+//   ];
+
+//   print(list);
+//   print(tamanhoLista);
+// //   print(amplitude);
+// //   print(list.reduce(max));
+// //   print('Maior valor encontrado: ${list.reduce(max)}');
+// //   list.sort();
+// //   print(list.reversed);
+// }
