@@ -1,0 +1,30 @@
+Gerir carteira de seguros
+
+Guardar de cada apolice
+	Seguradora
+	Tomador
+	Segurado
+	Tipo de seguro
+		..vida
+		..carro
+		..paredes casa
+	Valor segurado
+	valor do prémio anual
+	etc (?)
+
+Desenvolver app para ajudar mediador a guardar info da sua atividade.
+
+	Operações de manutenção de dados (atualizar)
+	Extrair para tabelas (?)
+
+Verificar integridade do sistema
+
+	Apresentar menu com diferentes funcionalidades
+	Apresentar dashboard
+			.. quantidade de apolices ativas e inativas
+			.. valor médio segurado por seguro
+			.. valor médio por tipo de seguro
+	Relatorio apolices por tipo de seguro e seguradora
+		Indicar valor de prémio
+		Somatório coluna dos prémios das apólices
+	Relatorio entidades (tomadores e segurados) que mostre idade e morada de cada.
