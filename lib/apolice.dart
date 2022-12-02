@@ -1,4 +1,4 @@
-import 'package:tp1_grupo8/pessoa.dart';
+import 'pessoa.dart';
 
 class Apolice extends Pessoa {
   int idApolice;

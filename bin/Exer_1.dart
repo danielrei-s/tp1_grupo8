@@ -1,4 +1,4 @@
-import 'package:tp1_grupo8/testarPrimo.dart';
+import '../lib/testarPrimo.dart';
 
 void main(List<String> args) {
   int count = 0;
@@ -16,3 +16,4 @@ void main(List<String> args) {
   print('Soma de primos no intervalo: $count');
   print('Média de primos no intervalo: $media');
 }
+//dewdew
