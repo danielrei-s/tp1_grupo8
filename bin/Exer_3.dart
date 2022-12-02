@@ -1,9 +1,19 @@
 // Surpresas Existem
+import 'dart:html';
 import 'dart:io' show stdin;
+import 'dart:core';
+
+import 'package:tp1_grupo8/apolice.dart';
 
 void main(List<String> args) {
-  String opcao; //escolha de menu
+  String opcao, captura, captura2, captura6, captura10; //escolha de menu
+  int contadorapolices = 11;
+  int contadorclientes = 11;
+  double captura7, captura8;
+  int captura1, captura5;
+  bool captura3, captura4, captura9;
 
+  //recolher inputs
   do {
     print(' ');
     print('<<< SURPRESAS EXISTEM - Gestor de Apolices >>>');
@@ -20,38 +30,72 @@ void main(List<String> args) {
     print("S - Sair");
     print("Opção? ");
     opcao = stdin.readLineSync()!; //ler user input
-
+    List apolices = [];
     switch (opcao.toUpperCase()) {
       //user fail safe
       case 'A':
         print('');
-        print('Maior valor encontrado: ${list.reduce(max)}');
-        print('Menor valor encontrado: ${list.reduce(min)}');
-        break;
+        print("Novo cliente? (S/N)");
+        captura = stdin.readLineSync()!;
+        if (captura == 'S') {
+          print(
+              "Por favor selecione abra ficha de cliente antes de criar apolice.");
+          print('');
+          break;
+        } else {
+          contadorapolices++;
+          print("Gerado novo número de apolice: $contadorapolices");
+          print("Criada nova Apolice, indique nome: ");
+          captura = stdin.readLineSync()!;
+          print("Criada nova Apolice, indique nome: ");
+          captura1 = stdin.readLineSync()! as int;
+          print("Criada nova Apolice, indique nome: ");
+          captura2 = stdin.readLineSync()!;
+          print("Criada nova Apolice, indique nome: ");
+          captura3 = stdin.readLineSync()! as bool;
+          print("Criada nova Apolice, indique nome: ");
+          captura4 = stdin.readLineSync()! as bool;
+          print("Criada nova Apolice, indique nome: ");
+          captura5 = stdin.readLineSync()! as int;
+          print("Criada nova Apolice, indique nome: ");
+          captura6 = stdin.readLineSync()!;
+          print("Criada nova Apolice, indique nome: ");
+          captura7 = stdin.readLineSync()! as double;
+          print("Criada nova Apolice, indique nome: ");
+          captura8 = stdin.readLineSync()! as double;
+          print("Criada nova Apolice, indique nome: ");
+          captura9 = stdin.readLineSync()! as bool;
+          print("Criada nova Apolice, indique nome da seguradora: ");
+          captura10 = stdin.readLineSync()!;
+
+          apolices.add(Apolice(
+              id: contadorapolices,
+              nome: captura,
+              idade: captura1,
+              morada: captura2,
+              tomador: captura3,
+              segurado: captura4,
+              idApolice: captura5,
+              tipo: captura6,
+              valorSegurado: captura7,
+              premio: captura8,
+              ativo: captura9,
+              seguradora: captura10));
+
+          print(apolices);
+
+          break;
+        }
 
       case 'B':
         //amplitude = maior valor subtraido do menor num conj de dados
-        amplitude = list.reduce(max) - list.reduce(min);
-        print('A amplitude da lista é: $amplitude');
+
         break;
 
       case 'C':
-        for (int i = 0; i < tamanhoLista; i++) {
-          if (list.elementAt(i) % 2 != 0) {
-            impar.add(list.elementAt(i));
-          } // adicionar penas impares na lista vazia
-        }
-        print('');
-        print('Lista de impares: $impar');
-        impar.sort(); //ordenar maior -> menor
-        print('');
-        print(
-            'Lista de impares Decrescente: ${impar.reversed}'); //ordenar menor -> maior
         break;
 
       case 'D':
-        print('');
-        print(list); //listar
         break;
 
       default:
