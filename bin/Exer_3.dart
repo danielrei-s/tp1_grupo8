@@ -9,23 +9,17 @@ void main(List<String> args) {
     print('<<< SURPRESAS EXISTEM - Gestor de Apolices >>>');
 
     print("-------------  MENU -------------");
-    print("A - Adicionar novo Apolice");
-    print("A - Adicionar novo Cliente");
-    print("A - Listar Cliente ou Apolices");
-    print("B - Atualizar lista de Clientes");
-    print("C - Atualizar lista de Apolices");
-    print("E - Atualizar lista de Apolices");
-    print("C - Relatórios");
+    print("A - Adicionar nova Apolice");
+    print("B - Adicionar novo Cliente");
+    print("C - Listar Cliente & Apolices");
+    print("D - Atualizar Cliente");
+    print("E - Atualizar Apolice");
+    print("F - Apagar Cliente");
+    print("G - Apagar Apolice");
     print("D - Opções avançadas");
     print("S - Sair");
     print("Opção? ");
     opcao = stdin.readLineSync()!; //ler user input
-
-    List<int> list = [
-      for (int i = 0; i <= tamanhoLista; i++) Random().nextInt(9999)
-    ]; //gera lista com ints aleatórios entre 0 e 9999.
-
-    List<int> impar = []; //para adicionar impares depois
 
     switch (opcao.toUpperCase()) {
       //user fail safe

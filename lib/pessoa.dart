@@ -14,4 +14,10 @@ abstract class Pessoa {
     this.tomador,
     this.segurado,
   );
+
+  @override
+  String toString() {
+    // TODO: implement toString
+    return super.toString();
+  }
 }
