@@ -4,7 +4,7 @@ import 'package:tp1_grupo8/seguradoras.dart';
 import 'package:tp1_grupo8/tipoSeguro.dart';
 import 'package:tp1_grupo8/tomadores.dart';
 
-void main(List<String> arguments) {
+void main(List<String> args) {
   while (true) {
     print("-------------  MENU -------------");
     print("1 - Apólices ativas");
@@ -132,7 +132,13 @@ void main(List<String> arguments) {
         print("0 - Sair\n");
         print("");
         var read = stdin.readLineSync()!;
-        if (read == "0") {
+        if (!temp.contains(read)) {
+          print("A opção $read não se encontra na lista.\n"); // fail-safe
+          print("Retornado para menu princial\n"); // fail-safe
+          break;
+        }
+        if (read == "0" || !temp.contains(read)) {
+          print("Saida com sucesso.\n");
           break;
         }
 
@@ -190,6 +196,7 @@ void main(List<String> arguments) {
             break;
 
           case 0:
+            print("Saida com sucesso.\n");
             break;
         }
 
