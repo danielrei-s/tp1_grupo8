@@ -14,12 +14,14 @@ void main(List<String> args) {
     print(' ');
     print(
         'Gerados $tamanhoLista números inteiros positivos de forma aleatória.');
+    print('');
     print("-------------  MENU -------------");
     print("A - Ver Maior & Menor elemento do conjunto");
     print("B - Amplitude do conjunto");
     print("C - Listar nº ímpares de forma decrescente");
     print("D - Ver lista");
     print("S - Sair");
+    print('');
     print("Opção? ");
     opcao = stdin.readLineSync()!; //ler user input
 

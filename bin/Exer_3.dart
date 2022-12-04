@@ -1,11 +1,12 @@
 import 'dart:io';
-import 'package:tp1_grupo8/apolice.dart';
-import 'package:tp1_grupo8/seguradoras.dart';
-import 'package:tp1_grupo8/tipoSeguro.dart';
-import 'package:tp1_grupo8/tomadores.dart';
+import '../lib/apolice.dart';
+import '../lib/seguradoras.dart';
+import '../lib/tipoSeguro.dart';
+import '../lib/tomadores.dart';
 
-void main(List<String> args) {
+void main(List<String> arguments) {
   while (true) {
+    print('');
     print("-------------  MENU -------------");
     print("1 - Apólices ativas");
     print("2 - Apólices inativas");
@@ -17,7 +18,7 @@ void main(List<String> args) {
     print("8 - Informações Seguradora");
     print("9 - Informações Tomadores");
     print("10 - Informações Segurados");
-    print("11 - Inserir Apolice");
+    print("11 - Inserir Apólice");
     print("12- Inserir Seguradora");
     print("13- Apagar");
     print("0 - Sair");
@@ -35,14 +36,14 @@ void main(List<String> args) {
         int apativos = apolices
             .where((e) => e.ativo == true)
             .length; //devolve int da quantidade ativa
-        print("Existem $apativos apolices ativas");
+        print("Existem $apativos apólices ativas");
         break;
 
       case 2:
         int apNativos = apolices
             .where((e) => e.ativo == false)
             .length; //devolve int da quantidade inativa
-        print("Existem $apNativos apolices ativas");
+        print("Existem $apNativos apólices ativas");
         break;
 
       case 3:
@@ -84,10 +85,10 @@ void main(List<String> args) {
                       count++,
                       media = total / count
                     }); //.. para cada, acumular corbertura em total e dividir pelas ocorrencias
-            print("A média dos seguros em Imobiliario é: $media €\n");
+            print("A média dos seguros em Imobiliário é: $media €\n");
             if (total < 1) {
               //Não existem seguros com valor de 0 ou negativos por isso o total é sempre superior a 0, provando que existe
-              print("Não existem apolices ativas para esse tipo de seguro\n");
+              print("Não existem apólices ativas para esse tipo de seguro\n");
             }
             break;
 
@@ -96,16 +97,16 @@ void main(List<String> args) {
                 .where((e) =>
                     e.ativo == true &&
                     e.tipoSeguro.name ==
-                        "automovel") // Dentros das ativas do tipo auto..
+                        "automóvel") // Dentros das ativas do tipo auto..
                 .forEach((e) => {
                       total += e.valorSegurado,
                       count++,
                       media = total / count
                     }); //.. para cada, acumular corbertura em total e dividir pelas ocorrencias
-            print("A média dos seguros em Automovel é: $media €\n");
+            print("A média dos seguros em Automóvel é: $media €\n");
             if (total < 1) {
               //Não existem seguros com valor de 0 ou negativos por isso o total é sempre superior a 0, provando que existe
-              print("Não existem apolices ativas para esse tipo de seguro\n");
+              print("Não existem apólices ativas para esse tipo de seguro\n");
             }
             break;
 
@@ -132,13 +133,7 @@ void main(List<String> args) {
         print("0 - Sair\n");
         print("");
         var read = stdin.readLineSync()!;
-        if (!temp.contains(read)) {
-          print("A opção $read não se encontra na lista.\n"); // fail-safe
-          print("Retornado para menu princial\n"); // fail-safe
-          break;
-        }
-        if (read == "0" || !temp.contains(read)) {
-          print("Saida com sucesso.\n");
+        if (read == "0") {
           break;
         }
 
@@ -173,7 +168,7 @@ void main(List<String> args) {
             print("\nRelatório em Imobiliário:\n");
             apolices
                 .where((e) =>
-                    e.ativo == true && e.tipoSeguro.name == "imobiliario")
+                    e.ativo == true && e.tipoSeguro.name == "imobiliário")
                 .forEach((e) => {
                       print(
                           ''' Nome: ${e.nomeTomador}\n Nome da Seguradora: ${e.seguradora}\n Prémio: ${e.premio} €\n'''),
@@ -186,7 +181,7 @@ void main(List<String> args) {
             print("\nRelatório em Automóvel:\n");
             apolices
                 .where(
-                    (e) => e.ativo == true && e.tipoSeguro.name == "automovel")
+                    (e) => e.ativo == true && e.tipoSeguro.name == "automóvel")
                 .forEach((e) => {
                       print(
                           ''' Nome: ${e.nomeTomador}\n Nome da Seguradora: ${e.seguradora}\n Prémio anual: ${e.premio} €\n'''),
@@ -196,7 +191,6 @@ void main(List<String> args) {
             break;
 
           case 0:
-            print("Saida com sucesso.\n");
             break;
         }
 
@@ -233,14 +227,14 @@ void main(List<String> args) {
         break;
 
       case 11:
-        print("»»Apolice««");
+        print("»»Apólice««");
         print("Insira o nome do Tomador");
         String nome = stdin.readLineSync()!;
         print("Insira o nome da Seguradora");
         String nomeSeguradora = stdin.readLineSync()!;
 
         print("\n»» Tipo de seguro? ««\n");
-        print("1- Imobiliario\n2- Automóvel");
+        print("1- Imobiliário\n2- Automóvel");
 
         var read = stdin.readLineSync()!;
         var seletor = int.parse(read);
@@ -267,7 +261,7 @@ void main(List<String> args) {
         contador++; // aumenta o contador que funcionará como ID
         apolices.add(Apolice(contador, nomeSeguradora, nome, tipoSeguro,
             valorSegurado, premio, true));
-        print("Apolice inserida com sucesso! \n");
+        print("Apólice inserida com sucesso! \n");
         break;
 
       case 12:
@@ -296,7 +290,7 @@ void main(List<String> args) {
             .any((e) => e.seguradora == deleteSeguradora && e.ativo == true)) {
           //Não permite eliminar com apolices ativas
           print(
-              "A seguradora : $deleteSeguradora tem apolices ativas! Deve cancelar antes de eliminar");
+              "A seguradora : $deleteSeguradora tem apólices ativas! Deve cancelar antes de eliminar");
         } else {
           seguradoras.removeWhere((e) => e.nome == deleteSeguradora);
           print("Seguradora removida com sucesso!\n");
