@@ -43,7 +43,7 @@ void main(List<String> arguments) {
         int apNativos = apolices
             .where((e) => e.ativo == false)
             .length; //devolve int da quantidade inativa
-        print("Existem $apNativos apólices ativas");
+        print("Existem $apNativos apólices inativas");
         break;
 
       case 3:
