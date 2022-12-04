@@ -1,0 +1,1 @@
+enum TipoSeguro { imobiliario, automovel }

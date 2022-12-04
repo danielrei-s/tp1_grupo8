@@ -1,29 +1,49 @@
-import 'pessoa.dart';
+import 'tipoSeguro.dart';
 
-class Apolice extends Pessoa {
-  final int idApolice;
-  final String tipo;
-  final double valorSegurado;
-  final double premio;
-  final bool ativo;
-  final String seguradora;
+class Apolice {
+  int id;
+  String seguradora;
+  String nomeTomador;
+  TipoSeguro tipoSeguro;
+  double valorSegurado;
+  double premio;
+  bool ativo;
 
-  const Apolice(
-      {required super.id,
-      required super.nome,
-      required super.idade,
-      required super.morada,
-      required super.tomador,
-      required super.segurado,
-      required this.idApolice,
-      required this.tipo,
-      required this.valorSegurado,
-      required this.premio,
-      required this.ativo,
-      required this.seguradora});
-
+  Apolice(
+    this.id,
+    this.seguradora,
+    this.nomeTomador,
+    this.tipoSeguro,
+    this.valorSegurado,
+    this.premio,
+    this.ativo,
+  );
   @override
-  String toString() {
-    return 'Apolice número: $idApolice. /n ...d'; //TODO
-  }
+  String toString() => '''Nome Cliente: $nomeTomador
+      Nome Seguradora: $seguradora
+      Tipo de Seguro: $tipoSeguro
+      Cobertura: $valorSegurado
+      Premio Anual: $premio
+      Ativo: $ativo''';
 }
+
+List<Apolice> apolices = [
+  Apolice(
+    1,
+    "Aliance",
+    "DanielReis",
+    TipoSeguro.automovel,
+    1000,
+    100,
+    true,
+  ),
+  Apolice(
+    2,
+    "Cofidis",
+    "LuisOlival",
+    TipoSeguro.imobiliario,
+    100000,
+    1000,
+    true,
+  ),
+];
